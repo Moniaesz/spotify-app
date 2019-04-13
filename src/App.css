@@ -1,33 +1,143 @@
 .App {
   text-align: center;
+  font-family: 'Lato', sans-serif;
 }
-
-.App-logo {
-  animation: App-logo-spin infinite 20s linear;
-  height: 40vmin;
-  pointer-events: none;
+.btn {
+  background: none;
+  border: 2px solid #00D95F;
+  padding: 0.8rem 2rem;
+  border-radius: 10px;
+  cursor: pointer;
+  transition: 0.3s ease-in-out;
+  box-shadow: 0 3px 6px rgba(0,0,0,0.16), 0 3px 6px rgba(0,0,0,0.23);
 }
-
-.App-header {
-  background-color: #282c34;
-  min-height: 100vh;
+.btn:hover {
+  background: white;
+}
+/*
+* === HEADER ===
+*/
+.header {
+  background: black;
+  padding: 1rem;
+  display: grid;
+  grid-template-columns: auto 1fr;
+  align-items: center;
+}
+.header_heading {
+  font-size: 1.7rem;
+  font-weight: 700;
+  line-height: 2rem;
+  color: white;
+}
+.logo--spotify {
+  height: 4rem;
+}
+.spotify-green {
+  color: #00D95F;
+}
+/*
+* === SEARCH ===
+*/
+.search__heading {
+  font-size: 1.5rem;
+  margin-top: 3rem;
+}
+.btn--search {
+  background: #00D95F;
+  color: black;
+  font-size: 1.2rem;
+  font-weight: 700;
+}
+.input {
+  border: 1px solid rgba(112, 112, 112, 0.4);
+  padding: 0.8rem;
+  border-radius: 10px;
+  box-shadow: 0 3px 6px rgba(0,0,0,0.16), 0 3px 6px rgba(0,0,0,0.23);
+  margin: 2rem 2rem 2rem auto;
+}
+/*
+* === SORT ===
+*/
+.sort {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  font-weight: 700;
+}
+.sort__heading {
+  font-size: 1.5rem;
+}
+.btn--sort {
+  box-shadow: none;
+}
+.btn--sort:hover {
+  box-shadow: 0 3px 6px rgba(0,0,0,0.16), 0 3px 6px rgba(0,0,0,0.23);
+}
+.btn--az {
+  margin: auto 1rem;
+}
+/*
+* === ALBUMS ===
+*/
+.albums__heading {
+  font-size: 2rem;
+  text-transform: uppercase;
+  font-weight: 700;
+  margin: 4rem auto 1rem auto;
+}
+.albums__wrapper {
+  display: flex;
+  flex-wrap: wrap;
+  margin: 0 auto;
+  justify-content: center;
+  max-width: 80rem;
+}
+.albums__single-album {
   display: flex;
   flex-direction: column;
   align-items: center;
-  justify-content: center;
-  font-size: calc(10px + 2vmin);
+  text-align: left;
+  line-height: 1.5rem;
+  margin: 1rem;
+  width: 15rem;
+  padding: 1rem;
+}
+.single__album__item {
+  margin-bottom: 0.6rem;
+  font-size: 1.2rem;
+}
+.album__img {
+  height: 10rem;
+  border-radius: 50%;
+}
+.single__album-name {
+  margin-top: 1rem;
+  font-weight: bold;
+}
+.single__album-artist {
+  font-style: italic;
+}
+.btn--album-details {
+  background:black;
   color: white;
+  border: 2px solid black;
 }
-
-.App-link {
-  color: #61dafb;
+.btn--album-details:hover {
+  color: black;
 }
-
-@keyframes App-logo-spin {
-  from {
-    transform: rotate(0deg);
-  }
-  to {
-    transform: rotate(360deg);
-  }
+/*
+* === FOOTER ===
+*/
+.footer {
+  margin-top: 3rem;
+  background: #00D95F;
+  padding: 0.8rem;
+}
+.footer__inner {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  max-width: 10rem;
+  margin: 0 auto;
 }
