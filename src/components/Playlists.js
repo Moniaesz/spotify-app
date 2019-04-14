@@ -7,34 +7,43 @@ class Playlists extends Component {
     const { showAlbumDetails, albums } = this.props;
     const albumDetails = this.props.albumDetails;
 
-    console.log(albumDetails.items);
+    const fullAlbumLength = 
+    console.log(albumDetails);
+    console.log(albumDetails !== null);
     
     return (
       <React.Fragment>
       {/* single album details */}
-        <div>
-          <ul>
-            <li>Total score: {albumDetails.total}</li>
-            {/* <li>
-                {albumDetails.tracks.items.map((track) => 
-                <p>{track.duration_ms}</p>
-                )}
-            </li> */}
-            <li>tracks:
-             {/* {Object.keys(albumDetails).length !== 0 && */}
-             { albumDetails.items !== undefined &&
-              albumDetails.items.map((track) => 
-              <ul>
-                <li>{track.duration_ms/1000/60}</li>
-                {/* <li></li> */}
+      {/* {albumDetails !== null &&
+        <section className="album-details">
+          <ul className="album-details__list">            
+            <li 
+              className="album-details__item">
+              Full album length:
+              {
+                albumDetails.tracks.map((track) => track.duration__ms).reduce((acc, currentValue) => { acc + currentValue }, 0)
+              }
+            </li>
+            <li 
+              className="album-details__item">
+              Popularity:
+              {albumDetails.popularity}
+            </li>
+            <li 
+              className="album-details__item album-details__item--tracks">
+              tracks:
+             { albumDetails.tracks.items.map((track) => 
+              <ul className="tracks__list">
+                <li className="tracks__item tracks__item--track-name">{track.name}</li>
+                <li className="tracks__item">{(track.duration_ms/1000/60).toFixed(2)} mins</li>
               </ul>
               )
              }
-
             </li>
             <li></li>
           </ul>
-        </div>
+        </section>    
+      } */}
 
         <h4 className="albums__heading">Albums</h4>
         <div className="albums__wrapper">

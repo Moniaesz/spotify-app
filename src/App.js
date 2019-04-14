@@ -14,34 +14,62 @@ class App extends Component {
 
     this.state = {
       albums: [],
-      albumDetails: {}
+      albumDetails: null,
+      query: ''
     }
   }
 
-  showAlbumDetails = () => {
-    console.log('album details button clicked!');
-  }
-
-  componentDidMount() {
+  // showAlbumDetails = () => {
+  //   console.log('album details button clicked!');
+  // }
+  
+  getAlbums = (query) => {
     let parsed = queryString.parse(window.location.search);
     let accessToken = parsed.access_token;
+  
+    this.setState({
+      query
+    })
 
-    //fetch all albums that match the search query
-    fetch("https://api.spotify.com/v1/search?q=sade&type=album", {
+    fetch(`https://api.spotify.com/v1/search?q=${query}&type=album`, {
       headers: {
-        Authorization: "Bearer" 
+        Authorization: `Bearer ${accessToken}` 
       }
     })
     .then((res) => res.json())
     .then((data) => 
-      this.setState({
-        albums: data.albums.items
-      })
+      {
+        this.setState({       
+          albums: data.albums.items
+        })
+      }
     );
+  }
 
-    fetch("https://api.spotify.com/v1/albums/0vNJ7P4dpArAiw5wBmsA3A/tracks", {
+  componentDidMount() {
+
+    let parsed = queryString.parse(window.location.search);
+    let accessToken = parsed.access_token;
+
+    //fetch all albums that match the search query
+    fetch(`https://api.spotify.com/v1/search?q=sade&type=album`, {
       headers: {
-        Authorization: "Bearer"
+        Authorization: `Bearer ${accessToken}` 
+      }
+    })
+    .then((res) => res.json())
+    .then((data) => 
+      {
+        this.setState({       
+          albums: data.albums.items
+        })
+      }
+    );
+    
+    //fetch album details - with hardcoded album id
+    fetch("https://api.spotify.com/v1/albums/0vNJ7P4dpArAiw5wBmsA3A/", {
+      headers: {
+        Authorization: `Bearer ${accessToken}` 
       }
     })
     .then((res) => res.json())
@@ -52,17 +80,6 @@ class App extends Component {
     );
   }
 
-  // componentDidMount() {
-  //   fetch("https://api.spotify.com/v1/search?q=sade&type=album", {
-  //     headers: {
-  //       Authorization: "Bearer" 
-  //     }
-  //   })
-  //   .then((res) => res.json())
-  //   .then((albums) => console.log(albums));
-  // }
-
-
   render() {
     console.log(this.state.albums);
     console.log(this.state.albumDetails);
@@ -70,7 +87,7 @@ class App extends Component {
     return (
       <div className="App">
         <Header />
-        <Search />
+        <Search getAlbums={this.getAlbums}/>
         <Sort />
         <Playlists 
           albums={this.state.albums}
