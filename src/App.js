@@ -7,7 +7,6 @@ import Sort from './components/Sort';
 import Playlists from './components/Playlists'
 import queryString from 'query-string';
 
-
 class App extends Component {
   constructor(props) {
     super()
@@ -19,9 +18,38 @@ class App extends Component {
     }
   }
 
-  // showAlbumDetails = () => {
-  //   console.log('album details button clicked!');
-  // }
+  //sort albums alphabetically
+  sortAZ = (albums) => {
+    albums = this.state.albums;
+    this.setState({
+      albums: albums.sort((a,b) => (a.name < b.name ? -1 : 1))
+    })
+  }
+
+  //sort albums by release date
+  sortByDate = (albums) => {
+    albums = this.state.albums;
+    this.setState({
+      albums: albums.sort((a,b) => (a.release_date > b.release_date? -1 : 1))
+    })
+  }
+
+  showAlbumDetails = () => {
+    let parsed = queryString.parse(window.location.search);
+    let accessToken = parsed.access_token;    
+        //fetch album details - with hardcoded album id
+        fetch("https://api.spotify.com/v1/albums/0vNJ7P4dpArAiw5wBmsA3A/", {
+          headers: {
+            Authorization: `Bearer ${accessToken}` 
+          }
+        })
+        .then((res) => res.json())
+        .then((album) => 
+          this.setState({
+            albumDetails: album
+          })
+        );
+  }
   
   getAlbums = (query) => {
     let parsed = queryString.parse(window.location.search);
@@ -47,12 +75,11 @@ class App extends Component {
   }
 
   componentDidMount() {
-
     let parsed = queryString.parse(window.location.search);
     let accessToken = parsed.access_token;
 
     //fetch all albums that match the search query
-    fetch(`https://api.spotify.com/v1/search?q=sade&type=album`, {
+    fetch(`https://api.spotify.com/v1/search?q=daria%20zawiałow&type=album`, {
       headers: {
         Authorization: `Bearer ${accessToken}` 
       }
@@ -65,30 +92,19 @@ class App extends Component {
         })
       }
     );
-    
-    //fetch album details - with hardcoded album id
-    fetch("https://api.spotify.com/v1/albums/0vNJ7P4dpArAiw5wBmsA3A/", {
-      headers: {
-        Authorization: `Bearer ${accessToken}` 
-      }
-    })
-    .then((res) => res.json())
-    .then((album) => 
-      this.setState({
-        albumDetails: album
-      })
-    );
   }
 
   render() {
     console.log(this.state.albums);
-    console.log(this.state.albumDetails);
 
     return (
       <div className="App">
         <Header />
         <Search getAlbums={this.getAlbums}/>
-        <Sort />
+        <Sort 
+          sortAZ={this.sortAZ} 
+          sortByDate={this.sortByDate}
+        />
         <Playlists 
           albums={this.state.albums}
           showAlbumDetails={this.showAlbumDetails}

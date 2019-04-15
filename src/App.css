@@ -62,6 +62,7 @@
 .sort {
   display: flex;
   justify-content: center;
+  flex-wrap: wrap;
   align-items: center;
   font-weight: 700;
 }
@@ -108,7 +109,7 @@
   font-size: 1.2rem;
 }
 .album__img {
-  height: 10rem;
+  height: 8rem;
   border-radius: 50%;
 }
 .single__album-name {
