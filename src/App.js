@@ -60,7 +60,8 @@ class App extends Component {
     let accessToken = parsed.access_token;
   
     this.setState({
-      query
+      query,
+      error: ''
     })
 
     fetch(`https://api.spotify.com/v1/search?q=${query}&type=album`, {
@@ -115,6 +116,7 @@ class App extends Component {
     return (
       <div className="App">
         <Header />
+        {this.state.error && <Error />}
         <Search getAlbums={this.getAlbums}/>
         <Sort 
           sortAZ={this.sortAZ} 
@@ -126,7 +128,6 @@ class App extends Component {
           albumDetails={this.state.albumDetails}
           hideAlbumDetails={this.hideAlbumDetails}
         />
-        {this.state.error && <Error />}
         <Footer />
       </div>
     );
