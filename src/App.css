@@ -172,6 +172,13 @@
   margin: auto 0.5rem;
   font-weight: 900;
 }
+.play__icon {
+  height: 2.5rem;
+}
+.play__button {
+  background: none;
+  cursor: pointer;
+}
 .album-details__close {
   background: black;
   border: none;

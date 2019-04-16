@@ -1,5 +1,4 @@
 import React, { Component } from 'react';
-import { Link } from 'react-router-dom';
 import playIcon from '../assets/play.svg';
 
 class AlbumDetails extends Component {
@@ -42,15 +41,17 @@ class AlbumDetails extends Component {
                   className="album-details__item album-details__item--tracks">
                 { albumDetails.tracks.items.map((track, index) => 
                   <ul key={index}className="tracks__list">
-                    <button 
-                      className="play__button"
-                      onClick={()=> console.log('listen!')}>
+                    <a 
+                      href={track.external_urls.spotify}
+                      rel="noopener noreferrer"
+                      target="_blank"
+                      className='play__button'>
                       <img 
                         src={playIcon}
                         alt="icon to play the music demo"
                         className="play__icon">
                       </img>
-                    </button>
+                    </a>
                     <li className="tracks__item tracks__item--track-name">{track.name}</li>
                     <li className="tracks__item">{(track.duration_ms/1000/60).toFixed(2)} mins</li>
                   </ul>
