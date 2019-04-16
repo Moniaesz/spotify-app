@@ -4,7 +4,7 @@ class Playlists extends Component {
 
   render() {
     
-    const { showAlbumDetails, albums } = this.props;
+    const { showAlbumDetails, albums, hideAlbumDetails } = this.props;
     const albumDetails = this.props.albumDetails;
 
     console.log(albumDetails);
@@ -15,6 +15,11 @@ class Playlists extends Component {
       {albumDetails !== null &&
         <section className="album-details">
           <h3 className="album-details__heading">ALBUM DETAILS</h3>
+            <button 
+              className="album-details__close"
+              onClick={hideAlbumDetails}>
+              X
+            </button>
             <ul className="album-details__list">            
               <li 
                 className="album-details__item album-details__title">

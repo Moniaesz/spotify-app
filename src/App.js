@@ -76,6 +76,13 @@ class App extends Component {
     );
   }
 
+  //hide album details
+  hideAlbumDetails = () => {
+    this.setState({
+      albumDetails: null
+    })
+  }
+
   componentDidMount() {
     let parsed = queryString.parse(window.location.search);
     let accessToken = parsed.access_token;
@@ -110,6 +117,7 @@ class App extends Component {
           albums={this.state.albums}
           showAlbumDetails={this.showAlbumDetails}
           albumDetails={this.state.albumDetails}
+          hideAlbumDetails={this.hideAlbumDetails}
         />
         <Footer />
       </div>
