@@ -4,7 +4,8 @@ import Header from './components/Header.js';
 import Footer from './components/Footer.js';
 import Search from './components/Search';
 import Sort from './components/Sort';
-import Playlists from './components/Playlists'
+import Playlists from './components/Playlists';
+import Error from './components/Error';
 import queryString from 'query-string';
 
 class App extends Component {
@@ -14,7 +15,8 @@ class App extends Component {
     this.state = {
       albums: [],
       albumDetails: null,
-      query: ''
+      query: '',
+      error: ''
     }
   }
 
@@ -30,7 +32,7 @@ class App extends Component {
   sortByDate = (albums) => {
     albums = this.state.albums;
     this.setState({
-      albums: albums.sort((a,b) => (a.release_date > b.release_date? -1 : 1))
+      albums: albums.sort((a,b) => (a.release_date > b.release_date ? -1 : 1))
     })
   }
 
@@ -49,7 +51,7 @@ class App extends Component {
           this.setState({
             albumDetails: album
           })
-        );
+        )
   }
   
   //get albums based of user's query value
@@ -73,7 +75,12 @@ class App extends Component {
           albums: data.albums.items
         })
       }
-    );
+    )
+    .catch(error => {
+      this.setState({
+        error: error
+      })
+    });
   }
 
   //hide album details
@@ -119,6 +126,7 @@ class App extends Component {
           albumDetails={this.state.albumDetails}
           hideAlbumDetails={this.hideAlbumDetails}
         />
+        {this.state.error && <Error />}
         <Footer />
       </div>
     );

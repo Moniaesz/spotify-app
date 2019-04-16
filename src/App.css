@@ -146,7 +146,6 @@
   display: flex;
   justify-content: center;
   flex-wrap: wrap;
-  color: white;
   max-width: 120rem;
   margin: 0 auto;
 }
@@ -157,11 +156,14 @@
   margin-top: 1rem;
 }
 .tracks__list {
-  background: #303030;
+  display: flex;
+  flex-direction: column;
+  background: white;
   margin: 1rem;
   padding: 0.5rem;
-  border-radius: 10px;
+  border-radius: 5px;
   width: 13rem;
+  box-shadow: 0 3px 6px rgba(0,0,0,0.16), 0 3px 6px rgba(0,0,0,0.23);
 }
 .tracks__item--track-name {
   font-weight: bold;
@@ -203,4 +205,18 @@ box-shadow: 0 10px 20px rgba(0,0,0,0.19), 0 6px 6px rgba(0,0,0,0.23);
   justify-content: space-between;
   max-width: 10rem;
   margin: 0 auto;
+}
+/*
+* ===  ERROR ===
+*/
+.error__heading {
+  margin: 1rem 1rem 2rem 1rem;
+  font-size: 1.2rem;
+  color: #FC5C7C;
+  font-weight: bold;
+  line-height: 1.6rem;
+  list-style: circle;
+}
+.error__img {
+  height: 10rem;
 }
