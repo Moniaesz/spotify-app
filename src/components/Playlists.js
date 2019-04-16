@@ -1,4 +1,5 @@
 import React, { Component } from 'react';
+import coverPlaceholder from '../assets/headphones.png';
 
 class Playlists extends Component {
 
@@ -38,7 +39,7 @@ class Playlists extends Component {
               </li>
               <li 
                 className="album-details__item album-details__title" 
-                style={{'font-style': 'italic', 'font-weight': 'bold', 'margin-top': '2rem'}}>
+                style={{'fonStyle': 'italic', 'fontWeight': 'bold', 'marginTop': '2rem'}}>
                 Tracks in album:
               </li>
               <li 
@@ -62,7 +63,9 @@ class Playlists extends Component {
               <ul className="albums__single-album single-album__list">
               <img 
                 className="album__img" 
-                src={singleAlbum.images[0].url}
+                src={(!singleAlbum.images || singleAlbum.images.length == 0) 
+                ? coverPlaceholder 
+                : singleAlbum.images[0].url}
                 alt={singleAlbum.name}>
               </img>
                 <li 
