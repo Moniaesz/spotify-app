@@ -34,11 +34,12 @@ class App extends Component {
     })
   }
 
-  showAlbumDetails = () => {
+  // show details of chosen album
+  showAlbumDetails = (albumId) => {
     let parsed = queryString.parse(window.location.search);
     let accessToken = parsed.access_token;    
-        //fetch album details - with hardcoded album id
-        fetch("https://api.spotify.com/v1/albums/0vNJ7P4dpArAiw5wBmsA3A/", {
+
+      fetch(`https://api.spotify.com/v1/albums/${albumId}/`, {
           headers: {
             Authorization: `Bearer ${accessToken}` 
           }
@@ -51,6 +52,7 @@ class App extends Component {
         );
   }
   
+  //get albums based of user's query value
   getAlbums = (query) => {
     let parsed = queryString.parse(window.location.search);
     let accessToken = parsed.access_token;
@@ -78,7 +80,6 @@ class App extends Component {
     let parsed = queryString.parse(window.location.search);
     let accessToken = parsed.access_token;
 
-    //fetch all albums that match the search query
     fetch(`https://api.spotify.com/v1/search?q=daria%20zawiałow&type=album`, {
       headers: {
         Authorization: `Bearer ${accessToken}` 

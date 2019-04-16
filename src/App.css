@@ -82,7 +82,7 @@
 * === ALBUMS ===
 */
 .albums__heading {
-  font-size: 2rem;
+  font-size: 2.3rem;
   text-transform: uppercase;
   font-weight: 700;
   margin: 4rem auto 1rem auto;
@@ -131,13 +131,44 @@
 * === ALBUM DETAILS ===
 */
 .album-details {
+  background-color: #f0f0f0;
   line-height: 1.6rem;
+  margin-top: 2rem;
+  padding: 3rem 2rem 2rem 2rem;
+  position: relative;
+}
+.album-details__heading {
+  font-size: 1.8rem;
+  font-weight: 700;
+  margin-bottom: 2rem;
+}
+.album-details__item--tracks {
+  display: flex;
+  justify-content: center;
+  flex-wrap: wrap;
+  color: white;
+  max-width: 120rem;
+  margin: 0 auto;
+}
+.album-details__title {
+  font-size: 1.1rem;
+}
+.album-details__item, .tracks__list {
+  margin-top: 1rem;
 }
 .tracks__list {
-  margin-top: 1rem;
+  background: #303030;
+  margin: 1rem;
+  padding: 0.5rem;
+  border-radius: 10px;
+  width: 13rem;
 }
 .tracks__item--track-name {
   font-weight: bold;
+}
+.album-details__span {
+  margin: auto 0.5rem;
+  font-weight: 900;
 }
 /*
 * === FOOTER ===
