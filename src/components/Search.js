@@ -21,26 +21,20 @@ class Search extends Component {
     return ( 
       <React.Fragment>
         <h3 className="search__heading">Find your favourite albums!</h3>
-        {/* <form> */}
+        <form className="search__form">
           <input 
             className="input" 
             type="text" 
             placeholder="type album name"
             onChange={(event) => this.handleQueryChange(event.target.value)}
           />
-          {/* <button 
-            className="btn btn--search"
-            onClick={getAlbums(this.state.query)}
-            >
-            search
-          </button> */}
           <input
             type="button"
             className="btn btn--search"
             value="search"
             onClick={()=>getAlbums(this.state.query)}
           /> 
-        {/* </form> */}
+        </form>
       </React.Fragment>
      );
   }
