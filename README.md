@@ -1,68 +1,65 @@
-This project was bootstrapped with [Create React App](https://github.com/facebook/create-react-app).
+### Spotify Albums App
 
-## Available Scripts
+Spotify App that let You browse favourite albums and get some details about them.
 
-In the project directory, you can run:
+App is presented in responsive manner, however it's much more comfortable to play around it on desktop.
 
-### `npm start`
+#### Functionalities: 
+1. Searching any albums in Spotify, by their names. Each albums have:
+  * cover image (or placeholder if image is not provided)
+  * album name
+  * artist name
+  * numbers of tracks in the album
 
-Runs the app in the development mode.<br>
-Open [http://localhost:3000](http://localhost:3000) to view it in the browser.
+2. Filtering fetched albums in alphabetical/release date order.
 
-The page will reload if you make edits.<br>
-You will also see any lint errors in the console.
+3. Get each album details, which contains:
+  * full album length
+  * popularity rank
+  * list with all tracks in the album along with their duration and link to actual song on Spotify online player
 
-### `npm test`
+#### For developers [Setup instructions];
 
-Launches the test runner in the interactive watch mode.<br>
-See the section about [running tests](https://facebook.github.io/create-react-app/docs/running-tests) for more information.
+1. Register or login to your Spotify account and register an app [here](https://developer.spotify.com/dashboard/applications) to get CLIENT_ID and CLIENT_SECRET.
 
-### `npm run build`
+![spotify-app-registration](readme-imgs/1-register-spotify-app.jpg)
 
-Builds the app for production to the `build` folder.<br>
-It correctly bundles React in production mode and optimizes the build for the best performance.
+Edit the settings set Redirect URLs to http://localhost:8888/callback (hit add button and also save on page bottom!).
 
-The build is minified and the filenames include the hashes.<br>
-Your app is ready to be deployed!
+![add-redirect-url](readme-imgs/2-settingg-redirect-url.jpg)
 
-See the section about [deployment](https://facebook.github.io/create-react-app/docs/deployment) for more information.
+2. Install project dependencies with `npm install` (both in spotify-app and albums-backend).
 
-### `npm run eject`
+3. From spotify-app directory export your credentials:
 
-**Note: this is a one-way operation. Once you `eject`, you can’t go back!**
+  * for BASH: 
+    `export SPOTIFY_CLIENT_ID=YourClientIdNumber`
+    `export SPOTIFY_CLIENT_SECRET=YourClientSecretNumber`
 
-If you aren’t satisfied with the build tool and configuration choices, you can `eject` at any time. This command will remove the single build dependency from your project.
+    You can check if they were exported correctly by running: 
 
-Instead, it will copy all the configuration files and the transitive dependencies (Webpack, Babel, ESLint, etc) right into your project so you have full control over them. All of the commands except `eject` will still work, but they will point to the copied scripts so you can tweak them. At this point you’re on your own.
+    `echo $SPOTIFY_CLIENT_ID $SPOTIFY_CLIENT_SECRET`
 
-You don’t have to ever use `eject`. The curated feature set is suitable for small and middle deployments, and you shouldn’t feel obligated to use this feature. However we understand that this tool wouldn’t be useful if you couldn’t customize it when you are ready for it.
+  * for Windows CMD:
+    `SET SPOTIFY_CLIENT_ID=YourClientIdNumber` 
+    `SET SPOTIFY_CLIENT_SECRET=YourClientSecretNumber`
 
-## Learn More
+    Verify with: 
+    `SET`
 
-You can learn more in the [Create React App documentation](https://facebook.github.io/create-react-app/docs/getting-started).
+4. Cd to albums-backend and run `npm start`.
 
-To learn React, check out the [React documentation](https://reactjs.org/).
+5. In spotify-app directory run `npm start` as well. NOTE: create-react-app runs by default on port 3000, but if You set it differently, You need to change it in albums-backend/server.js.
 
-### Code Splitting
+6. Go to http://localhost:8888/login and login to Spotify to start. You should be redirected to localhost:3000 with inserted access token as url parameter.
 
-This section has moved here: https://facebook.github.io/create-react-app/docs/code-splitting
+7. Acces token is valid for about an hour, after that You need to restart both servers.
 
-### Analyzing the Bundle Size
+#### Dependencies
 
-This section has moved here: https://facebook.github.io/create-react-app/docs/analyzing-the-bundle-size
-
-### Making a Progressive Web App
-
-This section has moved here: https://facebook.github.io/create-react-app/docs/making-a-progressive-web-app
-
-### Advanced Configuration
-
-This section has moved here: https://facebook.github.io/create-react-app/docs/advanced-configuration
-
-### Deployment
-
-This section has moved here: https://facebook.github.io/create-react-app/docs/deployment
-
-### `npm run build` fails to minify
-
-This section has moved here: https://facebook.github.io/create-react-app/docs/troubleshooting#npm-run-build-fails-to-minify
+* App utilize [Spotify API](https://developer.spotify.com/documentation/web-api/reference/)
+* project was bootstrapped with [Create React App](https://github.com/facebook/create-react-app).
+* OAuth helper service [OAuth bridge template](https://github.com/mpj/oauth-bridge-template)
+* layout made with [Flexbox Layout](https://css-tricks.com/snippets/css/a-guide-to-flexbox/)
+* BEM Methodology - [documentation](https://en.bem.info/)
+* icons by [Flaticon](https://www.flaticon.com/home)
