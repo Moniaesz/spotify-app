@@ -6,6 +6,7 @@ import Search from './components/Search';
 import Sort from './components/Sort';
 import Playlists from './components/Playlists';
 import Error from './components/Error';
+import MountError from './components/MountError';
 import queryString from 'query-string';
 
 class App extends Component {
@@ -16,10 +17,11 @@ class App extends Component {
       albums: [],
       albumDetails: null,
       query: '',
-      error: ''
+      error: '',
+      mountError: ''
     }
   }
-
+  
   //sort albums alphabetically
   sortAZ = (albums) => {
     albums = this.state.albums;
@@ -107,7 +109,12 @@ class App extends Component {
           albums: data.albums.items
         })
       }
-    );
+    )
+    .catch(error => {
+      this.setState({
+        mountError: error
+      })
+    });
   }
 
   render() {
@@ -117,6 +124,7 @@ class App extends Component {
       <div className="App">
         <Header />
         {this.state.error && <Error />}
+        {this.state.mountError && <MountError />}
         <Search getAlbums={this.getAlbums}/>
         <Sort 
           sortAZ={this.sortAZ} 

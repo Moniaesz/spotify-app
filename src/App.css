@@ -54,7 +54,8 @@
   padding: 0.8rem;
   border-radius: 10px;
   box-shadow: 0 3px 6px rgba(0,0,0,0.16), 0 3px 6px rgba(0,0,0,0.23);
-  margin: 2rem 2rem 2rem auto;
+  margin: 2rem 1rem 2rem auto;
+  width: 12rem;
 }
 /*
 * === SORT ===
@@ -68,6 +69,9 @@
 }
 .sort__heading {
   font-size: 1.5rem;
+}
+.sort__buttons {
+  margin-top: 1rem;
 }
 .btn--sort {
   box-shadow: none;
@@ -174,6 +178,11 @@
 }
 .play__icon {
   height: 2.5rem;
+  border-radius: 50%;
+  transition: 0.3s cubic-bezier(.17,.67,.65,.39)
+}
+.play__icon:hover {
+  box-shadow: 0 3px 6px rgba(0,0,0,0.16), 0 3px 6px rgba(0,0,0,0.23);
 }
 .play__button {
   background: none;
@@ -214,7 +223,7 @@ box-shadow: 0 10px 20px rgba(0,0,0,0.19), 0 6px 6px rgba(0,0,0,0.23);
   margin: 0 auto;
 }
 /*
-* ===  ERROR ===
+* === ERROR ===
 */
 .error__heading {
   margin: 1rem 1rem 2rem 1rem;
@@ -226,4 +235,20 @@ box-shadow: 0 10px 20px rgba(0,0,0,0.19), 0 6px 6px rgba(0,0,0,0.23);
 }
 .error__img {
   height: 10rem;
+}
+/*
+* === MOUNT ERROR ===
+*/
+.mount-error {
+  padding: 2rem 1rem;
+  background: #FC5C7C;
+  color: white;
+  line-height: 1.7rem;
+}
+.mount-error__heading {
+  font-size: 2rem;
+  font-weight: 700;
+}
+.mount-error__par {
+  margin-top: 1rem;
 }
