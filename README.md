@@ -4,6 +4,10 @@ Spotify App that let You browse favourite albums and get some details about them
 
 App is presented in responsive manner, however it's much more comfortable to play around it on desktop.
 
+Project utilize react.js library and it's divided into component's stucture.
+
+![spotify-app-search](readme-imgs/components-structure.jpg)
+
 Designed and prototyped in Adobe XD.
 
 ![spotify-app-search](readme-imgs/Search.jpg)
