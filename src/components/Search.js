@@ -26,6 +26,16 @@ class Search extends Component {
             className="input" 
             type="text" 
             placeholder="type album name"
+            onKeyPress={
+              (event) => {
+                if(event.charCode === 13) {
+                  event.preventDefault()
+                  getAlbums(this.state.query)
+                } else {
+                  return null 
+                }
+              }
+            }
             onChange={(event) => this.handleQueryChange(event.target.value)}
           />
           <input
