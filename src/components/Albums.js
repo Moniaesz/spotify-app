@@ -2,7 +2,7 @@ import React, { Component } from 'react';
 import SingleAlbum from './SingleAlbum';
 import AlbumDetails from './AlbumDetails';
 
-class Playlists extends Component {
+class Albums extends Component {
 
   render() {
     
@@ -32,4 +32,4 @@ class Playlists extends Component {
   }
 }
  
-export default Playlists;
+export default Albums;

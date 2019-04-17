@@ -4,7 +4,7 @@ import Header from './components/Header.js';
 import Footer from './components/Footer.js';
 import Search from './components/Search';
 import Sort from './components/Sort';
-import Playlists from './components/Playlists';
+import Albums from './components/Albums';
 import Error from './components/Error';
 import MountError from './components/MountError';
 import queryString from 'query-string';
@@ -130,7 +130,7 @@ class App extends Component {
           sortAZ={this.sortAZ} 
           sortByDate={this.sortByDate}
         />
-        <Playlists 
+        <Albums 
           albums={this.state.albums}
           showAlbumDetails={this.showAlbumDetails}
           albumDetails={this.state.albumDetails}
