@@ -4,6 +4,14 @@ Spotify App that let You browse favourite albums and get some details about them
 
 App is presented in responsive manner, however it's much more comfortable to play around it on desktop.
 
+Designed and prototyped in Adobe XD.
+
+![spotify-app-search](readme-imgs/Search.jpg)
+
+![spotify-app-album-details](readme-imgs/Album-details.jpg)
+
+![spotify-app-error](readme-imgs/Error.jpg)
+
 #### Functionalities: 
 1. Searching any albums in Spotify, by their names. Each albums have:
   * cover image (or placeholder if image is not provided)
@@ -33,19 +41,25 @@ Edit the settings set Redirect URLs to http://localhost:8888/callback (hit add b
 3. From spotify-app directory export your credentials:
 
   * for BASH: 
-    `export SPOTIFY_CLIENT_ID=YourClientIdNumber`
-    `export SPOTIFY_CLIENT_SECRET=YourClientSecretNumber`
-
+    ```
+    $ export SPOTIFY_CLIENT_ID=YourClientIdNumber
+    $ export SPOTIFY_CLIENT_SECRET=YourClientSecretNumber
+    ```
     You can check if they were exported correctly by running: 
-
-    `echo $SPOTIFY_CLIENT_ID $SPOTIFY_CLIENT_SECRET`
+    ```
+    $ echo $SPOTIFY_CLIENT_ID $SPOTIFY_CLIENT_SECRET
+    ```
 
   * for Windows CMD:
-    `SET SPOTIFY_CLIENT_ID=YourClientIdNumber` 
-    `SET SPOTIFY_CLIENT_SECRET=YourClientSecretNumber`
+    ```
+    $ SET SPOTIFY_CLIENT_ID=YourClientIdNumber
+    $ SET SPOTIFY_CLIENT_SECRET=YourClientSecretNumber
+    ```
 
     Verify with: 
-    `SET`
+    ```
+    $ SET
+    ```
 
 4. Cd to albums-backend and run `npm start`.
 
@@ -60,6 +74,7 @@ Edit the settings set Redirect URLs to http://localhost:8888/callback (hit add b
 * App utilize [Spotify API](https://developer.spotify.com/documentation/web-api/reference/)
 * project was bootstrapped with [Create React App](https://github.com/facebook/create-react-app).
 * OAuth helper service [OAuth bridge template](https://github.com/mpj/oauth-bridge-template)
+* designed in [Adobe XD](https://www.adobe.com/pl/products/xd.html)
 * layout made with [Flexbox Layout](https://css-tricks.com/snippets/css/a-guide-to-flexbox/)
 * BEM Methodology - [documentation](https://en.bem.info/)
 * icons by [Flaticon](https://www.flaticon.com/home)
