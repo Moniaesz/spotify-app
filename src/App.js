@@ -124,7 +124,7 @@ class App extends Component {
     return (
       <div className="App">
         <Header />
-        {this.state.error && <Error />}
+        {!this.state.mountError && this.state.error && <Error />}
         {this.state.mountError && <MountError />}
         <Search getAlbums={this.getAlbums}/>
         <Sort 
