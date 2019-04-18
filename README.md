@@ -36,13 +36,15 @@ Designed and prototyped in Adobe XD.
 
 ![spotify-app-registration](readme-imgs/1-register-spotify-app.jpg)
 
-Edit the settings set Redirect URLs to http://localhost:8888/callback (hit add button and also save on page bottom!).
+Click "edit settings" and set "Redirect URLs" to http://localhost:8888/callback. Hit "add" button on the right of the input field and also "save" on page bottom.
 
 ![add-redirect-url](readme-imgs/2-settingg-redirect-url.jpg)
 
-2. Install project dependencies with `npm install` (both in spotify-app and albums-backend).
+1.9 Open two separate shells. Cd in first to frontend-app and in second to backend-app.
 
-3. From spotify-app directory export your credentials:
+2. Install project dependencies with `npm install` (both in frontend-app and backend-app).
+
+3. From backend-app directory export your credentials as environment variables:
 
   * for BASH: 
     ```
@@ -65,13 +67,13 @@ Edit the settings set Redirect URLs to http://localhost:8888/callback (hit add b
     $ SET
     ```
 
-4. Cd to albums-backend and run `npm start`.
+4. In backend-app directory run `npm start`.
 
-5. In spotify-app directory run `npm start` as well. NOTE: create-react-app runs by default on port 3000, but if You set it differently, You need to change it in albums-backend/server.js.
+5. In frontend-app directory run `npm start` as well. NOTE: create-react-app runs by default on port 3000, but if You set it differently, You need to change it in backend-app/server.js.
 
 6. Go to http://localhost:8888/login and login to Spotify to start. You should be redirected to localhost:3000 with inserted access token as url parameter.
 
-7. Acces token is valid for about an hour, after that You need to restart both servers.
+7. Acces token is valid for about an hour. If app stopps working navigate to http://localhost:8888/login to refresh your access token. 
 
 #### Dependencies
 
