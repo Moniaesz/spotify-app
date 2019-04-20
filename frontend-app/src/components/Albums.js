@@ -8,8 +8,6 @@ class Albums extends Component {
     
     const { showAlbumDetails, albums, hideAlbumDetails } = this.props;
     const albumDetails = this.props.albumDetails;
-
-    console.log(albumDetails);
     
     return (
       <React.Fragment>

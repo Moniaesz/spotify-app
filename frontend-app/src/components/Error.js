@@ -1,4 +1,4 @@
-import React, { Component } from 'react';
+import React from 'react';
 import errorIllustration from '../assets/error.png';
 
 export default function Error() {

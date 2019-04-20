@@ -119,8 +119,7 @@ class App extends Component {
   }
 
   render() {
-    console.log(this.state.albums);
-
+    
     return (
       <div className="App">
         <Header />
