@@ -40,18 +40,18 @@ Click "edit settings" and set "Redirect URLs" to http://localhost:8888/callback.
 
 ![add-redirect-url](readme-imgs/2-settingg-redirect-url.jpg)
 
-1.9 Open two separate shells. Cd in first to frontend-app and in second to backend-app.
+2. Open two separate shells. Cd in first to frontend-app and in second to backend-app.
 
-2. Install project dependencies with `npm install` (both in frontend-app and backend-app).
+3. Install project dependencies with `npm install` (both in frontend-app and backend-app).
 
-3. From backend-app directory export your credentials as environment variables:
+4. From backend-app shell export your credentials as environment variables:
 
   * for BASH: 
     ```
     $ export SPOTIFY_CLIENT_ID=YourClientIdNumber
     $ export SPOTIFY_CLIENT_SECRET=YourClientSecretNumber
     ```
-    You can check if they were exported correctly by running: 
+    you can check if they were exported correctly by running: 
     ```
     $ echo $SPOTIFY_CLIENT_ID $SPOTIFY_CLIENT_SECRET
     ```
@@ -67,13 +67,13 @@ Click "edit settings" and set "Redirect URLs" to http://localhost:8888/callback.
     $ SET
     ```
 
-4. In backend-app directory run `npm start`.
+5. In backend-app shell run `npm start`.
 
-5. In frontend-app directory run `npm start` as well. NOTE: create-react-app runs by default on port 3000, but if You set it differently, You need to change it in backend-app/server.js.
+6. In frontend-app shell run `npm start` as well. NOTE: create-react-app runs by default on port 3000, but if You set it differently, You need to change it in backend-app/server.js.
 
-6. Go to http://localhost:8888/login and login to Spotify to start. You should be redirected to localhost:3000 with inserted access token as url parameter.
+7. Go to http://localhost:8888/login and login to Spotify to start. You should be redirected to localhost:3000 with inserted access token as url parameter.
 
-7. Acces token is valid for about an hour. If app stopps working navigate to http://localhost:8888/login to refresh your access token. 
+8. Acces token is valid for about an hour. If app stopps working navigate to http://localhost:8888/login to refresh your access token. 
 
 #### Dependencies
 
