@@ -34,11 +34,11 @@ Designed and prototyped in Adobe XD.
 
 1. Register or login to your Spotify account and register an app [here](https://developer.spotify.com/dashboard/applications) to get CLIENT_ID and CLIENT_SECRET.
 
-![spotify-app-registration](readme-imgs/1-register-spotify-app.jpg)
+![spotify-app-registration](readme-imgs/1-register-spotify-app.JPG)
 
 Click "edit settings" and set "Redirect URLs" to http://localhost:8888/callback. Hit "add" button on the right of the input field and also "save" on page bottom.
 
-![add-redirect-url](readme-imgs/2-settingg-redirect-url.jpg)
+![add-redirect-url](readme-imgs/2-settingg-redirect-url.JPG)
 
 2. Open two separate shells. Cd in first to frontend-app and in second to backend-app.
 
