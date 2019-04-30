@@ -10,7 +10,7 @@ class Albums extends Component {
     const albumDetails = this.props.albumDetails;
     
     return (
-      <React.Fragment>
+      <section className="albums">
         <AlbumDetails 
           albumDetails={albumDetails} 
           hideAlbumDetails={hideAlbumDetails}
@@ -25,7 +25,7 @@ class Albums extends Component {
             />
           )))}
         </div>
-      </React.Fragment> 
+      </section> 
     )
   }
 }
