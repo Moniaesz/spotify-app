@@ -84,3 +84,4 @@ Click "edit settings" and set "Redirect URLs" to http://localhost:8888/callback.
 * layout made with [Flexbox Layout](https://css-tricks.com/snippets/css/a-guide-to-flexbox/)
 * BEM Methodology - [documentation](https://en.bem.info/)
 * icons by [Flaticon](https://www.flaticon.com/home)
+* error illustration from [undraw](https://undraw.co/illustrations)
